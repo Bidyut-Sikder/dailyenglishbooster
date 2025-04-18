@@ -7,13 +7,15 @@ import {
   Button,
   FlexAlignType,
   TextStyle,
+  Pressable,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useTheme } from "@/hooks/theme";
+import { Link, useRouter } from "expo-router";
 
 export default function App() {
   const { theme, toggleTheme } = useTheme();
-
+  const router = useRouter();
   const isDark = theme === "dark";
 
   const themedStyles = {
@@ -58,18 +60,29 @@ export default function App() {
   };
 
   const Item = ({ title, description, icon }: (typeof data)[0]) => (
-    <View style={themedStyles.card}>
-      <Ionicons
-        name={icon as any}
-        size={32}
-        color="#4e6cef"
-        style={themedStyles.icon}
-      />
-      <View style={themedStyles.textBox}>
-        <Text style={themedStyles.title}>{title}</Text>
-        <Text style={themedStyles.description}>{description}</Text>
+    <Pressable
+      key={title}
+      onPress={() => {
+        // router.push(`/${title}`)
+        router.push({
+          pathname: `/[category]`,
+          params: { category: title },
+        });
+      }}
+    >
+      <View style={themedStyles.card}>
+        <Ionicons
+          name={icon as any}
+          size={32}
+          color="#4e6cef"
+          style={themedStyles.icon}
+        />
+        <View style={themedStyles.textBox}>
+          <Text style={themedStyles.title}>{title}</Text>
+          <Text style={themedStyles.description}>{description}</Text>
+        </View>
       </View>
-    </View>
+    </Pressable>
   );
 
   return (
