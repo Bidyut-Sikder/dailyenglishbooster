@@ -123,6 +123,7 @@
 
 import DailyLife from "@/components/conversation/DailyLife";
 import Education from "@/components/conversation/Education";
+import HomeAndHouse from "@/components/conversation/HomeAndHouse";
 import { useLocalSearchParams } from "expo-router";
 
 // import Conversation from "@/components/common/Conversation";
@@ -264,17 +265,19 @@ import { useLocalSearchParams } from "expo-router";
 // }
 
 const Index = () => {
-  const { topic,id } = useLocalSearchParams();
-console.log(topic)
+  const { topic, id } = useLocalSearchParams();
+  console.log(topic);
   if (topic === "Education") {
     return <Education />;
   }
-if(topic === "Daily Life") {
-  return <DailyLife />;
-}
+  if (topic === "Daily Life") {
+    return <DailyLife />;
+  }
 
-  return <Education />;
+  if (topic === "Home and House") {
+    return <HomeAndHouse />;
+  }
+  return null;
 };
-
 
 export default Index;

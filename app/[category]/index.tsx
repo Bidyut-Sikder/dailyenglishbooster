@@ -137,7 +137,7 @@ const data = [
   { id: "7", title: "Food and Restaurant", icon: "restaurant-outline" },
   {
     id: "8",
-    title: "Travel-Transport-Vacation-Direction",
+    title: "Travel-Transport",
     icon: "bus-outline",
   },
   {
@@ -145,12 +145,12 @@ const data = [
     title: "Environment and Nature",
     icon: "leaf-outline",
   },
-  { id: "10", title: "Works-jobs and office", icon: "briefcase-outline" },
-  { id: "11", title: "Entertainment-media", icon: "tv-outline" },
+  { id: "10", title: "Works-Jobs and Office", icon: "briefcase-outline" },
+  { id: "11", title: "Entertainment-Media", icon: "tv-outline" },
   { id: "12", title: "Special Events", icon: "sparkles-outline" },
   { id: "13", title: "Money Banks", icon: "cash-outline" },
-  { id: "14", title: "Communication time", icon: "chatbubble-outline" },
+  { id: "14", title: "Communication Time", icon: "chatbubble-outline" },
   { id: "15", title: "Sports and fitness", icon: "fitness-outline" },
   { id: "16", title: "Fashion and cloths", icon: "shirt-outline" },
-  { id: "17", title: "Friendship- memory-emotions", icon: "heart-outline" },
+  { id: "17", title: "Friendship-Memories", icon: "heart-outline" },
 ];
