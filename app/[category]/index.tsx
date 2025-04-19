@@ -20,7 +20,7 @@ import {
   useLocalSearchParams,
   useRouter,
 } from "expo-router";
-import Education from "@/components/conversation/Education";
+
 
 export default function App() {
   const { category } = useLocalSearchParams() as {
@@ -28,7 +28,7 @@ export default function App() {
     topic: string;
   };
   const navigation = useNavigation();
-  console.log(category);
+
   const { theme, toggleTheme } = useTheme();
   const router = useRouter();
   const isDark = theme === "dark";

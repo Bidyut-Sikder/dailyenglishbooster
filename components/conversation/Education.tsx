@@ -1,148 +1,109 @@
-import React, { useEffect } from "react";
+import Conversation from "@/components/common/Conversation";
+import React from "react";
+import { useLocalSearchParams, useNavigation } from "expo-router";
 import {
-  FlatList,
-  View,
-  Text,
-  Platform,
-  Pressable,
-  FlexAlignType,
-  TextStyle,
-} from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-import { useTheme } from "@/hooks/theme";
-import { useLocalSearchParams, useRouter, useNavigation } from "expo-router";
-import * as Speech from "expo-speech";
+  afterSchoolActivities,
+  artClassFun,
+  askingQuestionsInClass,
+  classroomRules,
+  doingHomework,
+  endOfTheSchoolYear,
+  fieldTrips,
+  firstDayAtSchool,
+  gettingGoodGrades,
+  groupProjects,
+  learningOnline,
+  libraryVisit,
+  lunchTimeAtSchool,
+  meetingNewFriends,
+  meetingThePrincipal,
+  myFavoriteSubject,
+  parentTeacherMeeting,
+  recessAndBreakTime,
+  schoolAssembly,
+  schoolBusRide,
+  schoolSupplies,
+  scienceLab,
+  sportsDay,
+  studyingForExams,
+  talkingToTheTeacher,
+  wearingSchoolUniform,
+  welcomeToOurSchool,
+  writingEssays,
+} from "@/assets/data/conversations/education";
+const Education = () => {
+  const { id } = useLocalSearchParams();
 
-export default function Education() {
-  const navigation = useNavigation();
-  const { category, topic } = useLocalSearchParams() as {
-    category: string;
-    topic: string;
-  };
-  const { theme } = useTheme();
-  const router = useRouter();
-  const isDark = theme === "dark";
+  const idString = Array.isArray(id) ? id[0] : id; // Ensure id is a string
+  return <Conversation data={conversation(idString) || []} />;
+};
 
-  const speak = (text: string) => {
-    Speech.speak(text, {
-      language: "en",
-    });
-  };
-  useEffect(() => {
-    if (topic) {
-      navigation.setOptions({ title: decodeURIComponent(topic as string) });
-    }
-  }, [topic]);
-  const themedStyles = {
-    container: {
-      padding: 16,
-    },
-    card: {
-      flexDirection: "row" as const,
-      backgroundColor: isDark ? "#313639" : "#fff",
-      borderRadius: 7,
-      padding: 16,
-      marginBottom: 16,
-      alignItems: "center" as FlexAlignType,
-      ...Platform.select({
-        ios: {
-          shadowColor: "#000",
-          shadowOffset: { width: 0, height: 2 },
-          shadowOpacity: 0.2,
-          shadowRadius: 16,
-        },
-        android: {
-          elevation: 4,
-        },
-      }),
-    },
-    icon: {
-      marginRight: 16,
-    },
-    textBox: {
-      flex: 1,
-    },
-    title: {
-      fontSize: 17,
-      fontWeight: "600" as TextStyle["fontWeight"],
-      marginBottom: 4,
-      color: isDark ? "#fff" : "#333",
-    },
-    topic: {
-      fontSize: 13,
-      fontWeight: "400" as TextStyle["fontWeight"],
-      marginBottom: 4,
-      color: isDark ? "#ccc" : "#666",
-    },
-  };
+export default Education;
 
-  const Item = ({ title, topic }: { topic: string; title: string }) => (
-    <Pressable
-      onPress={() => {
-        speak(title);
-        // router.push(`/${category}/${topic}/${encodeURIComponent(title)}`);
-        router.push({
-          pathname: `/[category]/[topic]/[title]`,
-          params: { category, topic,  title },
-        });
-      }}
-    >
-      <View style={themedStyles.card}>
-        <Ionicons
-          name="book-outline"
-          size={32}
-          color="#4e6cef"
-          style={themedStyles.icon}
-        />
-        <View style={themedStyles.textBox}>
-          <Text style={themedStyles.title}>{title}</Text>
-          <Text style={themedStyles.topic}>{topic}</Text>
-        </View>
-      </View>
-    </Pressable>
-  );
+function conversation(id: string) {
+  switch (id) {
+    case "1":
+      return firstDayAtSchool;
+    case "2":
+      // handle Welcome to School
+      return welcomeToOurSchool;
+    case "3":
+      // handle Classroom Rules
+      return classroomRules;
+    case "4":
+      return meetingNewFriends;
+    // handle Meeting New Friends
+    case "5":
+      return myFavoriteSubject;
+    case "6":
+      return schoolSupplies;
+    case "7":
+      return askingQuestionsInClass;
+    case "8":
+      return doingHomework;
+    case "9":
+      return talkingToTheTeacher;
+    case "10":
+      return gettingGoodGrades;
+    case "11":
+      return libraryVisit;
+    case "12":
+      return learningOnline;
+    case "13":
+      return studyingForExams;
+    case "14":
+      return groupProjects;
+    case "15":
+      return fieldTrips;
+    case "16":
+      return schoolAssembly;
+    case "17":
+      return recessAndBreakTime;
+    case "18":
+      return writingEssays;
+    case "19":
+      return scienceLab;
+    case "20":
+      return endOfTheSchoolYear;
+    case "21":
+      return schoolBusRide;
+    case "22":
+      return lunchTimeAtSchool;
+    case "23":
+      return meetingThePrincipal;
+    case "24":
+      return parentTeacherMeeting;
+    case "25":
+      return wearingSchoolUniform;
+    case "26":
+      return afterSchoolActivities;
+    case "27":
+      return sportsDay;
+    case "28":
+      return artClassFun;
 
-  return (
-    <View style={{ flex: 1, backgroundColor: isDark ? "#191919" : "#f2f2f2" }}>
-      <FlatList
-        data={topicDataList}
-        renderItem={({ item }) => (
-          <Item title={item.title} topic={item.topic} />
-        )}
-        keyExtractor={(item) => item.id.toString()}
-        contentContainerStyle={themedStyles.container}
-      />
-    </View>
-  );
+    default:
+      // handle unknown slug
+      return null;
+  }
 }
-
-const topicDataList = [
-  { id: 1, title: "First Day of School", topic: "Education" },
-  { id: 2, title: "Welcome to School", topic: "Education" },
-  { id: 3, title: "Classroom Rules", topic: "Education" },
-  { id: 4, title: "Meeting New Friends", topic: "Education" },
-  { id: 5, title: "My Favorite Subject", topic: "Education" },
-  { id: 6, title: "School Supplies", topic: "Education" },
-  { id: 7, title: "Asking Questions in Class", topic: "Education" },
-  { id: 8, title: "Doing Homework", topic: "Education" },
-  { id: 9, title: "Talking to the Teacher", topic: "Education" },
-  { id: 10, title: "Getting Good Grades", topic: "Education" },
-  { id: 11, title: "Library Visit", topic: "Education" },
-  { id: 12, title: "Learning Online", topic: "Education" },
-  { id: 13, title: "Studying for Exams", topic: "Education" },
-  { id: 14, title: "Group Projects", topic: "Education" },
-  { id: 15, title: "Field Trips", topic: "Education" },
-  { id: 16, title: "School Assembly", topic: "Education" },
-  { id: 17, title: "Recess and Break Time", topic: "Education" },
-  { id: 18, title: "Writing Essays", topic: "Education" },
-  { id: 19, title: "Science Lab", topic: "Education" },
-  { id: 20, title: "End of the School Year", topic: "Education" },
-  { id: 21, title: "School Bus Ride", topic: "Education" },
-  { id: 22, title: "Lunch Time at School", topic: "Education" },
-  { id: 23, title: "Meeting the Principal", topic: "Education" },
-  { id: 24, title: "Parent-Teacher Meeting", topic: "Education" },
-  { id: 25, title: "Wearing School Uniform", topic: "Education" },
-  { id: 26, title: "After School Activities", topic: "Education" },
-  { id: 27, title: "Sports Day", topic: "Education" },
-  { id: 28, title: "Art Class Fun", topic: "Education" }
-];
