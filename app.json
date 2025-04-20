@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "Daily English Booster",
-    "slug": "dailyenglishbooster",
+    "name": "English Booster",
+    "slug": "englishbooster",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "dailyenglishbooster",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -15,7 +15,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.bidyut_sikder.englishbooster"
     },
     "web": {
       "bundler": "metro",
@@ -32,10 +33,27 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
+      ],
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-6496060089456706~7346555245"
+        }
       ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "6f896744-21ac-43c8-9fcd-5ef8b3724dee"
+      }
     }
+  },
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-6496060089456706~7346555245"
   }
 }
