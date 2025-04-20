@@ -20,7 +20,8 @@ import {
   useLocalSearchParams,
   useRouter,
 } from "expo-router";
-
+import { conversationCategories } from "@/assets/data/category/categories";
+import VocabCategories from "@/components/vocabulary/VocabCategories";
 
 export default function App() {
   const { category } = useLocalSearchParams() as {
@@ -28,7 +29,7 @@ export default function App() {
     topic: string;
   };
   const navigation = useNavigation();
-
+  console.log(category);
   const { theme, toggleTheme } = useTheme();
   const router = useRouter();
   const isDark = theme === "dark";
@@ -78,7 +79,7 @@ export default function App() {
     },
   };
 
-  const Item = ({ title, icon }: (typeof data)[0]) => (
+  const Item: React.FC<{ title: string; icon: string }> = ({ title, icon }) => (
     <Pressable
       key={title}
       onPress={() => {
@@ -110,16 +111,20 @@ export default function App() {
         style={{ flex: 1, backgroundColor: isDark ? "#191919" : "#f2f2f2" }}
       >
         <FlatList
-          data={data}
+          data={conversationCategories}
           renderItem={({ item }) => <Item {...item} />}
           keyExtractor={(item) => item.id}
           contentContainerStyle={themedStyles.container}
         />
-        
       </View>
     );
- 
   }
+
+  if (category === "Vocabulary") {
+    return <VocabCategories />;
+  }
+
+
 
   return (
     <>
@@ -127,30 +132,3 @@ export default function App() {
     </>
   );
 }
-const data = [
-  { id: "1", title: "Education", icon: "school-outline" },
-  { id: "2", title: "Daily Life", icon: "calendar-outline" },
-  { id: "3", title: "House and Home", icon: "home-outline" },
-  { id: "4", title: "Family", icon: "people-outline" },
-  { id: "5", title: "Shopping", icon: "cart-outline" },
-  { id: "6", title: "Health", icon: "medkit-outline" },
-  { id: "7", title: "Food and Restaurant", icon: "restaurant-outline" },
-  {
-    id: "8",
-    title: "Travel-Transport",
-    icon: "bus-outline",
-  },
-  {
-    id: "9",
-    title: "Environment and Nature",
-    icon: "leaf-outline",
-  },
-  { id: "10", title: "Works-Jobs and Office", icon: "briefcase-outline" },
-  { id: "11", title: "Entertainment-Media", icon: "tv-outline" },
-  { id: "12", title: "Special Events", icon: "sparkles-outline" },
-  { id: "13", title: "Money Banks", icon: "cash-outline" },
-  { id: "14", title: "Communication Time", icon: "chatbubble-outline" },
-  { id: "15", title: "Sports and fitness", icon: "fitness-outline" },
-  { id: "16", title: "Fashion and cloths", icon: "shirt-outline" },
-  { id: "17", title: "Friendship-Memories", icon: "heart-outline" },
-];

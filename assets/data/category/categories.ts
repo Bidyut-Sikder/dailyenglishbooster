@@ -1,0 +1,27 @@
+export const conversationCategories = [
+    { id: "1", title: "Education", icon: "school-outline" },
+    { id: "2", title: "Daily Life", icon: "calendar-outline" },
+    { id: "3", title: "House and Home", icon: "home-outline" },
+    { id: "4", title: "Family", icon: "people-outline" },
+    { id: "5", title: "Shopping", icon: "cart-outline" },
+    { id: "6", title: "Health", icon: "medkit-outline" },
+    { id: "7", title: "Food and Restaurant", icon: "restaurant-outline" },
+    {
+      id: "8",
+      title: "Travel-Transport",
+      icon: "bus-outline",
+    },
+    {
+      id: "9",
+      title: "Environment and Nature",
+      icon: "leaf-outline",
+    },
+    { id: "10", title: "Works-Jobs and Office", icon: "briefcase-outline" },
+    { id: "11", title: "Entertainment-Media", icon: "tv-outline" },
+    { id: "12", title: "Special Events", icon: "sparkles-outline" },
+    { id: "13", title: "Money Banks", icon: "cash-outline" },
+    { id: "14", title: "Communication Time", icon: "chatbubble-outline" },
+    { id: "15", title: "Sports and fitness", icon: "fitness-outline" },
+    { id: "16", title: "Fashion and cloths", icon: "shirt-outline" },
+    { id: "17", title: "Friendship-Memories", icon: "heart-outline" },
+  ];

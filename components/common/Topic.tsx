@@ -131,33 +131,3 @@ export default function Topic({ data,icon }: any) {
   );
 }
 
-const topicDataList = [
-  { id: 1, title: "First Day of School", topic: "Education" },
-  { id: 2, title: "Welcome to School", topic: "Education" },
-  { id: 3, title: "Classroom Rules", topic: "Education" },
-  { id: 4, title: "Meeting New Friends", topic: "Education" },
-  { id: 5, title: "My Favorite Subject", topic: "Education" },
-  { id: 6, title: "School Supplies", topic: "Education" },
-  { id: 7, title: "Asking Questions in Class", topic: "Education" },
-  { id: 8, title: "Doing Homework", topic: "Education" },
-  { id: 9, title: "Talking to the Teacher", topic: "Education" },
-  { id: 10, title: "Getting Good Grades", topic: "Education" },
-  { id: 11, title: "Library Visit", topic: "Education" },
-  { id: 12, title: "Learning Online", topic: "Education" },
-  { id: 13, title: "Studying for Exams", topic: "Education" },
-  { id: 14, title: "Group Projects", topic: "Education" },
-  { id: 15, title: "Field Trips", topic: "Education" },
-  { id: 16, title: "School Assembly", topic: "Education" },
-  { id: 17, title: "Recess and Break Time", topic: "Education" },
-  { id: 18, title: "Writing Essays", topic: "Education" },
-  { id: 19, title: "Science Lab", topic: "Education" },
-  { id: 20, title: "End of the School Year", topic: "Education" },
-  { id: 21, title: "School Bus Ride", topic: "Education" },
-  { id: 22, title: "Lunch Time at School", topic: "Education" },
-  { id: 23, title: "Meeting the Principal", topic: "Education" },
-  { id: 24, title: "Parent-Teacher Meeting", topic: "Education" },
-  { id: 25, title: "Wearing School Uniform", topic: "Education" },
-  { id: 26, title: "After School Activities", topic: "Education" },
-  { id: 27, title: "Sports Day", topic: "Education" },
-  { id: 28, title: "Art Class Fun", topic: "Education" },
-];

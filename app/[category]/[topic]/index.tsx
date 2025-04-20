@@ -24,6 +24,8 @@ import {
   travelTransport,
   workJobsOffice,
 } from "@/assets/data/conversations/topics";
+import GREWords from "@/components/vocabulary/GREWords";
+import LikedGREWords from "@/components/vocabulary/LikedGREWords";
 
 export default function App() {
   const navigation = useNavigation();
@@ -32,11 +34,8 @@ export default function App() {
     topic: string;
   };
 
-  const speak = (text: string) => {
-    Speech.speak(text, {
-      language: "en",
-    });
-  };
+  console.log(topic);
+
   useEffect(() => {
     if (topic) {
       navigation.setOptions({ title: decodeURIComponent(topic as string) });
@@ -100,5 +99,13 @@ export default function App() {
   if (topic === "Friendship-Memories") {
     return <Topic data={friendshipMemoriesEmotions} icon={"heart-outline"} />;
   }
+
+  if (topic === "1900 Daily/GRE Words") {
+    return <GREWords />;
+  }
+  if (topic === "liked-gre-words") {
+    return <LikedGREWords />;
+  }
+
   return <Text> NO DATA </Text>;
 }
