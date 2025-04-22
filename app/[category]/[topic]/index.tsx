@@ -24,17 +24,75 @@ import {
   travelTransport,
   workJobsOffice,
 } from "@/assets/data/conversations/topics";
-import GREWords from "@/components/vocabulary/GREWords";
-import LikedGREWords from "@/components/vocabulary/LikedGREWords";
+
+import ShowWords from "@/components/common/ShowWords";
+import { commonWords } from "@/assets/data/vocabularies/commonWords";
+import { grewords } from "@/assets/data/vocabularies/grewords";
+import ShowLikedWords from "@/components/common/ShowLikedWords";
+import { ieltsWords } from "@/assets/data/vocabularies/ielts";
+import ShowSentences from "@/components/sentences/ShowSentences";
+import {
+  adjectivesAndOpposites,
+  agreeingAndDisagreeing,
+  animals,
+  apologizing,
+  askingForHelp,
+  atSchool,
+  atTheDoctor,
+  atTheMarket,
+  atTheRestaurant,
+  clothingAndFashion,
+  colorsAndShapes,
+  commonQuestions,
+  conjunctions,
+  dailyRoutine,
+  describingPeople,
+  describingThings,
+  directions,
+  emotionsAndFeelings,
+  environment,
+  familyMembers,
+  foodAndDrink,
+  futurePlans,
+  givingOpinions,
+  greetings,
+  healthAndIllness,
+  hobbies,
+  holidaysAndCelebrations,
+  homeAndFurniture,
+  hopesAndDreams,
+  inTheClassroom,
+  jobsAndWorkplaces,
+  makingInvitations,
+  makingSuggestions,
+  numberMoney,
+  occupations,
+  onlineCommunication,
+  pastEvents,
+  phoneConversations,
+  prepositions,
+  roomsInAHouse,
+  schoolSubjects,
+  shoppingSentences,
+  sports,
+  technology,
+  tellingStories,
+  timeAndDate,
+  transportation,
+  travelAndPlaces,
+  verbsAndActions,
+  weather,
+} from "@/assets/data/sentences/sentences";
+import SentenceController from "@/components/sentences/SentenceController";
 
 export default function App() {
   const navigation = useNavigation();
-  const { topic } = useLocalSearchParams() as {
+  const { category, topic } = useLocalSearchParams() as {
     category: string;
     topic: string;
   };
 
-  console.log(topic);
+  console.log(category, ",", topic);
 
   useEffect(() => {
     if (topic) {
@@ -100,12 +158,50 @@ export default function App() {
     return <Topic data={friendshipMemoriesEmotions} icon={"heart-outline"} />;
   }
 
-  if (topic === "1900 Daily/GRE Words") {
-    return <GREWords />;
+  if (topic === "500 Daily/GRE Words") {
+    return <ShowWords wordList={grewords} storageKey={"lovedGreWords"} />;
   }
   if (topic === "liked-gre-words") {
-    return <LikedGREWords />;
+    return (
+      <ShowLikedWords
+        wordList={grewords}
+        title={"GRE"}
+        storageKey={"lovedGreWords"}
+      />
+    );
   }
+  if (topic === "450 Common Words") {
+    return <ShowWords wordList={commonWords} storageKey={"lovedCommonWords"} />;
+  }
+  if (topic === "liked-common-words") {
+    return (
+      <ShowLikedWords
+        wordList={commonWords}
+        title={"Common"}
+        storageKey={"lovedCommonWords"}
+      />
+    );
+  }
+
+  if (topic === "650 IELTS Words") {
+    return <ShowWords wordList={ieltsWords} storageKey={"lovedIeltsWords"} />;
+  }
+  if (topic === "liked-ielts-words") {
+    return (
+      <ShowLikedWords
+        wordList={ieltsWords}
+        title={"IELTS"}
+        storageKey={"lovedIeltsWords"}
+      />
+    );
+  }
+
+  /////////////////////////////
+  if(category==='Everyday Sentences' ){
+    return <SentenceController  topic={topic}/>
+
+  }
+    
 
   return <Text> NO DATA </Text>;
 }

@@ -22,6 +22,7 @@ import {
 } from "expo-router";
 import { conversationCategories } from "@/assets/data/category/categories";
 import VocabCategories from "@/components/vocabulary/VocabCategories";
+import SentenceCategories from "@/components/sentences/SentenceCategories";
 
 export default function App() {
   const { category } = useLocalSearchParams() as {
@@ -124,8 +125,14 @@ export default function App() {
     return <VocabCategories />;
   }
 
+  if (category === "Everyday Sentences") {
+    return <SentenceCategories />;
+  }
 
+  // if(category==='Everyday Sentences'){
+  //   return <
 
+  // }
   return (
     <>
       <Text> not conversation</Text>

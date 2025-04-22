@@ -159,15 +159,10 @@
 //////////////////////////////
 
 
-
-
-
-
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
-  FlatList,
   TouchableOpacity,
   StyleSheet,
   Platform,
@@ -177,6 +172,7 @@ import * as Speech from 'expo-speech';
 import { Ionicons } from '@expo/vector-icons';
 import { grewords } from '@/assets/data/vocabularies/grewords';
 import { useTheme } from '@/hooks/theme';
+import { FlashList } from '@shopify/flash-list';
 
 export default function GREList() {
   const [lovedIds, setLovedIds] = useState<number[]>([]);
@@ -199,7 +195,7 @@ export default function GREList() {
     const updated = lovedIds.includes(id)
       ? lovedIds.filter(i => i !== id)
       : [...lovedIds, id];
-    setLovedIds(updated);
+    setLovedIds(updated); // ✅ Fixed here
     await AsyncStorage.setItem('lovedGreWords', JSON.stringify(updated));
   };
 
@@ -291,12 +287,12 @@ export default function GREList() {
           <TouchableOpacity onPress={() => toggleLove(item.id)}>
             <Ionicons
               name={lovedIds.includes(item.id) ? 'heart' : 'heart-outline'}
-              size={24}
+              size={26}
               color={lovedIds.includes(item.id) ? 'red' : isDark ? '#aaa' : 'gray'}
             />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => handleSpeak(item.word)} style={{ marginLeft: 10 }}>
-            <Ionicons name="volume-high-outline" size={24} color={isDark ? '#fff' : 'black'} />
+            <Ionicons name="volume-high-outline" size={28} color={isDark ? '#fff' : 'black'} />
           </TouchableOpacity>
         </View>
       </View>
@@ -310,29 +306,15 @@ export default function GREList() {
 
   return (
     <View style={{ flex: 1, backgroundColor: isDark ? '#191919' : '#f2f2f2' }}>
-      <FlatList
+      <FlashList
         data={grewords}
         keyExtractor={item => item.id.toString()}
         renderItem={renderItem}
+        estimatedItemSize={140}
         contentContainerStyle={styles.list}
-        getItemLayout={(data, index) => ({ length: 120, offset: 120 * index, index })}
         showsVerticalScrollIndicator={true}
+        extraData={lovedIds} 
       />
     </View>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

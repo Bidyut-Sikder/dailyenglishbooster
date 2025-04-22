@@ -181,11 +181,10 @@ import { useLocalSearchParams, useNavigation } from "expo-router";
 import { useTheme } from "@/hooks/theme";
 import { grewords } from "@/assets/data/vocabularies/grewords";
 
-
-
 export default function LikedGREWords() {
   const [lovedIds, setLovedIds] = useState<number[]>([]);
   const navigation = useNavigation();
+  const [loading, setLoading] = useState(false);
 
   const params = useLocalSearchParams();
 
@@ -194,8 +193,16 @@ export default function LikedGREWords() {
 
   useEffect(() => {
     const loadLovedWords = async () => {
-      const json = await AsyncStorage.getItem("lovedGreWords");
-      if (json) setLovedIds(JSON.parse(json));
+      try {
+        setLoading(true);
+        const json = await AsyncStorage.getItem("lovedGreWords");
+        if (json) {
+          setLovedIds(JSON.parse(json));
+          setLoading(false);
+        }
+      } catch (error) {
+        setLoading(false);
+      }
     };
     loadLovedWords();
   }, []);
@@ -228,7 +235,7 @@ export default function LikedGREWords() {
         </View>
         <View style={styles.iconRow}>
           <TouchableOpacity onPress={() => toggleLove(item.id)}>
-            <Ionicons name="heart" size={24} color="red" />
+            <Ionicons name="heart" size={26} color="red" />
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => handleSpeak(item.word)}
@@ -236,7 +243,7 @@ export default function LikedGREWords() {
           >
             <Ionicons
               name="volume-high-outline"
-              size={24}
+              size={28}
               color={isDark ? "#fff" : "black"}
             />
           </TouchableOpacity>
@@ -333,7 +340,11 @@ export default function LikedGREWords() {
               color: isDark ? "#aaa" : "#333",
             }}
           >
-            No liked words found.
+            {
+              loading
+                ? "Loading..."
+                : "No liked words found. Go to the dictionary and like some words!"
+            }
           </Text>
         }
       />
