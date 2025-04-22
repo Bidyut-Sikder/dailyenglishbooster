@@ -23,6 +23,7 @@ import {
 import { conversationCategories } from "@/assets/data/category/categories";
 import VocabCategories from "@/components/vocabulary/VocabCategories";
 import SentenceCategories from "@/components/sentences/SentenceCategories";
+import { moreSentenceCategories, sentenceCategories } from "@/assets/data/sentences/categories";
 
 export default function App() {
   const { category } = useLocalSearchParams() as {
@@ -126,13 +127,13 @@ export default function App() {
   }
 
   if (category === "Everyday Sentences") {
-    return <SentenceCategories />;
+    return <SentenceCategories sentenceCategories={sentenceCategories} />;
   }
 
-  // if(category==='Everyday Sentences'){
-  //   return <
+  if(category==='More Sentences'){
+    return <SentenceCategories sentenceCategories={moreSentenceCategories} />
 
-  // }
+  }
   return (
     <>
       <Text> not conversation</Text>

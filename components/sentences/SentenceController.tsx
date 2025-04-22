@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View,Text } from "react-native";
 import ShowSentences from "./ShowSentences";
 import {
   adjectivesAndOpposites,
@@ -157,7 +157,7 @@ const SentenceController = ({ topic }: { topic: string }) => {
     case "Online Communication":
       return <ShowSentences sentences={onlineCommunication} />;
     default:
-      return <div>Topic not found</div>;
+      return <Text>Topic not found</Text>;
   }
 };
 

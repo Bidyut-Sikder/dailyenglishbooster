@@ -56,10 +56,59 @@ export const sentenceCategories=[
 
 
 
-export const moreSentenceCategories=[
-    
-]
-
+export const moreSentenceCategories = [
+    { id: 1, title: "Academic Vocabulary in Use" },
+    { id: 2, title: "Business Meetings" },
+    { id: 3, title: "Startup and Entrepreneurship" },
+    { id: 4, title: "Marketing and Advertising" },
+    { id: 5, title: "Job Interviews" },
+    { id: 6, title: "Resume and CV Writing" },
+    { id: 7, title: "Networking Events" },
+    { id: 8, title: "Project Management" },
+    { id: 9, title: "Workplace Communication" },
+    { id: 10, title: "Email Etiquette" },
+    { id: 11, title: "Giving Presentations" },
+    { id: 12, title: "Customer Service Scenarios" },
+    { id: 13, title: "Conflict Resolution" },
+    { id: 14, title: "Team Collaboration" },
+    { id: 15, title: "Office and Admin Vocabulary" },
+    { id: 16, title: "Leadership and Management" },
+    { id: 17, title: "Financial English" },
+    { id: 18, title: "Legal Conversations" },
+    { id: 19, title: "Insurance and Claims" },
+    { id: 20, title: "Medical English" },
+    { id: 21, title: "Mental Health Conversations" },
+    { id: 22, title: "Hotel and Travel Booking" },
+    { id: 23, title: "Airport Conversations" },
+    { id: 24, title: "Immigration and Customs" },
+    { id: 25, title: "Tour Guide English" },
+    { id: 26, title: "Restaurant and Café English" },
+    { id: 27, title: "Shopping in Malls" },
+    { id: 28, title: "Ordering Online" },
+    { id: 29, title: "Tech Support Conversations" },
+    { id: 30, title: "Phone and Chat Support" },
+    { id: 31, title: "Asking for Feedback" },
+    { id: 32, title: "Giving Feedback" },
+    { id: 33, title: "Event Planning" },
+    { id: 34, title: "Hosting Guests" },
+    { id: 35, title: "Describing Experiences" },
+    { id: 36, title: "Explaining Procedures" },
+    { id: 37, title: "Making Apologies" },
+    { id: 38, title: "Disagreeing Politely" },
+    { id: 39, title: "Negotiation Skills" },
+    { id: 40, title: "Persuasive Speaking" },
+    { id: 41, title: "Debate Skills" },
+    { id: 42, title: "Scientific Discussions" },
+    { id: 43, title: "Environmental Issues" },
+    { id: 44, title: "Technology and Innovation" },
+    { id: 45, title: "Social Media Language" },
+    { id: 46, title: "Cybersecurity Vocabulary" },
+    { id: 47, title: "Artificial Intelligence" },
+    { id: 48, title: "Remote Work English" },
+    { id: 49, title: "Cultural Sensitivity" },
+    { id: 50, title: "Future Predictions" },
+  ];
+  
 
 
 

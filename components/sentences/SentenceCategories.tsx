@@ -12,10 +12,10 @@ import { Ionicons } from "@expo/vector-icons";
 import { useTheme } from "@/hooks/theme";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { sentenceCategories } from "@/assets/data/sentences/categories";
+// import { sentenceCategories } from "@/assets/data/sentences/categories";
 
 
-export default function SentenceCategories() {
+export default function SentenceCategories({sentenceCategories}:any) {
   const router = useRouter();
   const { theme } = useTheme();
   const isDark = theme === "dark";
