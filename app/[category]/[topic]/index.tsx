@@ -7,6 +7,7 @@ import SentenceController from "@/components/sentences/SentenceController";
 import ConversationController from "@/components/conversation/ConversationController";
 import VovabularyController from "@/components/vocabulary/VovabularyController";
 import MoreSentenceController from "@/components/sentences/MoreSentenceController";
+import IdiomsController from "@/components/idioms/IdiomsController";
 
 export default function App() {
   const navigation = useNavigation();
@@ -42,6 +43,11 @@ export default function App() {
     //More Sentences start here
     if (category === "More Sentences" && topic) {
       return <MoreSentenceController topic={topic} />;
+    }
+
+    //More Sentences start here
+    if (category === "Idioms" && topic) {
+      return <IdiomsController topic={topic} />;
     }
 
   return <Text> NO DATA </Text>;

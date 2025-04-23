@@ -24,6 +24,8 @@ import { conversationCategories } from "@/assets/data/category/categories";
 import VocabCategories from "@/components/vocabulary/VocabCategories";
 import SentenceCategories from "@/components/sentences/SentenceCategories";
 import { moreSentenceCategories, sentenceCategories } from "@/assets/data/sentences/categories";
+import { idiomsCategories } from "@/assets/data/idioms/categories";
+import IdiomsCategories from "@/components/idioms/IdiomsCategories";
 
 export default function App() {
   const { category } = useLocalSearchParams() as {
@@ -134,6 +136,12 @@ export default function App() {
     return <SentenceCategories sentenceCategories={moreSentenceCategories} />
 
   }
+
+  if(category==='Idioms'){
+    return <IdiomsCategories idiomsCategories={idiomsCategories} />
+
+  }
+
   return (
     <>
       <Text> not conversation</Text>
