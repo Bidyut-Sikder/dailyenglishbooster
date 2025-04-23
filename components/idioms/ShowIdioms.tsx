@@ -23,9 +23,9 @@ export default function ShowIdioms({dataList,storageKey}:any) {
   const isDark = theme === 'dark';
 
 
-  useEffect(() => {
-    navigation.setOptions({ title: decodeURIComponent(`${params.category} ${params.topic}`) });
-  }, [params]);
+  // useEffect(() => {
+  //   navigation.setOptions({ title: decodeURIComponent(`${params.category} ${params.topic}`) });
+  // }, [params]);
 
 
   useEffect(() => {

@@ -75,7 +75,7 @@ export default function ShowFavoriteIdioms({dataList,header, storageKey}:any) {
             <Ionicons name="heart" size={26} color="red" />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => handleSpeak(item.word)}
+            onPress={() => handleSpeak(item.idiom)}
             style={{ marginLeft: 10 }}
           >
             <Ionicons

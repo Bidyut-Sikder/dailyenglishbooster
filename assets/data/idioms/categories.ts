@@ -67,19 +67,19 @@ export const idiomsCategories = [
   //     { id: 28, title: 'Friendship' },
   //     { id: 29, title: 'Learning' },
   //     { id: 30, title: 'Success' }
-  //   ]; these are idioms categories .give me idioms like export const BusinessIdioms = [
-  //   {
-  //     id: 1,
-  //     idiom: "idioms about business",
-  //     meaning: "",
-  //     example1: "",
-  //     example2:
-  //       "",
-  //   },  {
-  //     id: 2,
-  //     idiom: "idioms about business",
-  //     meaning: "",
-  //     example1: "",
-  //     example2:
-  //       "",
-  //   },] this structure 
+    // ]; these are idioms categories .give me idioms like export const BusinessIdioms = [
+    // {
+    //   id: 1,
+    //   idiom: "idioms about business",
+    //   meaning: "",
+    //   example1: "",
+    //   example2:
+    //     "",
+    // },  {
+    //   id: 2,
+    //   idiom: "idioms about business",
+    //   meaning: "",
+    //   example1: "",
+    //   example2:
+    //     "",
+    // },] this structure 
