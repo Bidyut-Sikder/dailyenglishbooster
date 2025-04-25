@@ -6,6 +6,7 @@ const ThemeContext = createContext({
   toggleTheme: () => {},
   bg: "#f2f2f2",
   bgCard: "#fff",
+
 });
 
 export const CustomThemeProvider = ({ children }: { children: ReactNode }) => {

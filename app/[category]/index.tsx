@@ -26,6 +26,8 @@ import SentenceCategories from "@/components/sentences/SentenceCategories";
 import { moreSentenceCategories, sentenceCategories } from "@/assets/data/sentences/categories";
 import { idiomsCategories } from "@/assets/data/idioms/categories";
 import IdiomsCategories from "@/components/idioms/IdiomsCategories";
+import { phrasesCategories } from "@/assets/data/phrases/categories";
+import PhrasesCategories from "@/components/phrases/PhrasesCategories";
 
 export default function App() {
   const { category } = useLocalSearchParams() as {
@@ -42,6 +44,7 @@ export default function App() {
       navigation.setOptions({ title: decodeURIComponent(category as string) });
     }
   }, [category]);
+  
   const themedStyles = {
     container: {
       padding: 16,
@@ -141,6 +144,12 @@ export default function App() {
     return <IdiomsCategories idiomsCategories={idiomsCategories} />
 
   }
+
+  if(category==='Phrases'){
+    return <PhrasesCategories phrasesCategories={phrasesCategories} />
+
+  }
+
 
   return (
     <>

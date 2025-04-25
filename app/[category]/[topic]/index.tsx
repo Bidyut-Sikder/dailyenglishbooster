@@ -8,6 +8,11 @@ import ConversationController from "@/components/conversation/ConversationContro
 import VovabularyController from "@/components/vocabulary/VovabularyController";
 import MoreSentenceController from "@/components/sentences/MoreSentenceController";
 import IdiomsController from "@/components/idioms/IdiomsController";
+import PhrasesController from "@/components/phrases/PhrasesController";
+import { createContext, useContext } from "react";
+
+
+
 
 export default function App() {
   const navigation = useNavigation();
@@ -16,13 +21,16 @@ export default function App() {
     topic: string;
   };
 
-  console.log(category, ",", topic);
+
 
   useEffect(() => {
     if (topic) {
       navigation.setOptions({ title: decodeURIComponent(topic as string) });
     }
   }, [topic]);
+
+
+
   //conversations start here
 
   if (category === "Conversation" && topic) {
@@ -48,6 +56,11 @@ export default function App() {
     //More Sentences start here
     if (category === "Idioms" && topic) {
       return <IdiomsController topic={topic} />;
+    }
+
+    if (category === "Phrases" && topic) {
+      return       <PhrasesController topic={topic} />;
+
     }
 
   return <Text> NO DATA </Text>;
