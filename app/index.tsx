@@ -138,7 +138,7 @@ const data = [
   },
   {
     id: "7",
-    title: "Grammar Tips",
+    title: "Grammar",
     description: "Essential grammar rules and usage.",
     icon: "book-outline",
   },

@@ -15,3 +15,18 @@ const NotFound = () => {
 const styles = StyleSheet.create({})
 
 export default NotFound;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

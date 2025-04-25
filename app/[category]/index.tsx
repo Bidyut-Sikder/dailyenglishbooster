@@ -28,6 +28,8 @@ import { idiomsCategories } from "@/assets/data/idioms/categories";
 import IdiomsCategories from "@/components/idioms/IdiomsCategories";
 import { phrasesCategories } from "@/assets/data/phrases/categories";
 import PhrasesCategories from "@/components/phrases/PhrasesCategories";
+import GrammarCategories from "@/components/grammar/GrammarCategories";
+import { grammarCategories } from "@/assets/data/grammar/grammarCategories";
 
 export default function App() {
   const { category } = useLocalSearchParams() as {
@@ -149,7 +151,10 @@ export default function App() {
     return <PhrasesCategories phrasesCategories={phrasesCategories} />
 
   }
+  if(category==='Grammar'){
+    return <GrammarCategories grammarCategories={grammarCategories} />
 
+  }
 
   return (
     <>
