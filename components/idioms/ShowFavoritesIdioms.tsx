@@ -43,9 +43,9 @@ export default function ShowFavoriteIdioms({dataList,header, storageKey}:any) {
     loadLovedWords();
   }, []);
 
-  useEffect(() => {
-    navigation.setOptions({ title: decodeURIComponent(`❤️ ${params.category} ${header}`) });
-  }, [params]);
+  // useEffect(() => {
+  //   navigation.setOptions({ title: decodeURIComponent(`❤️ ${params.category} ${header}`) });
+  // }, [params]);
 
   const handleSpeak = (text: string) => {
     Speech.speak(text, { language: "en", rate: 0.8 });

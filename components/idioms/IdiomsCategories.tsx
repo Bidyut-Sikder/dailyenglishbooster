@@ -68,7 +68,7 @@ export default function IdiomsCategories({idiomsCategories}:any) {
       paddingTop: 16,
     },
   };
-
+ 
   return (
     <View style={themedStyles.container}>
       <FlatList
@@ -94,36 +94,36 @@ export default function IdiomsCategories({idiomsCategories}:any) {
                   pathname: `/[category]/[topic]`,
                   params: { 
                     category, topic: 
-                    item.title === "Age" ? 'LovedAge' :
-                     item.title === 'Animals' ? 'LovedAnimals' :
-                     item.title === 'Business' ? 'LovedBusiness' :
-                     item.title === 'Clothes' ? 'LovedClothes' :
-                     item.title === 'Colors' ? 'LovedColors' :
-                     item.title === 'Death' ? 'LovedDeath' :
-                     item.title === 'Emotions' ? 'LovedEmotions' :
-                     item.title === 'Family' ? 'LovedFamily' :
-                     item.title === 'Food' ? 'LovedFood' :
-                     item.title === 'Health' ? 'LovedHealth' :
-                     item.title === 'Love' ? 'LovedLove' :
-                     item.title === 'Money' ? 'LovedMoney' :
-                     item.title === 'Nature' ? 'LovedNature' :
-                     item.title === 'Numbers' ? 'LovedNumbers' :
-                     item.title === 'People' ? 'LovedPeople' :
-                     item.title === 'Relationships' ? 'LovedRelationships' :
-                     item.title === 'School' ? 'LovedSchool' :
-                     item.title === 'Sports' ? 'LovedSports' :
-                     item.title === 'Technology' ? 'LovedTechnology' :
-                     item.title === 'Time' ? 'LovedTime' :
-                     item.title === 'Travel' ? 'LovedTravel' :
-                     item.title === 'Weather' ? 'LovedWeather' :
-                     item.title === 'Work' ? 'LovedWork' :
-                     item.title === 'Body Parts' ? 'LovedBody Parts' :
-                     item.title === 'Daily Life' ? 'LovedDaily Life' :
-                     item.title === 'Feelings' ? 'LovedFeelings' :
-                     item.title === 'Friendship' ? 'LovedFriendship' :
-                     item.title === 'Directions' ? 'LovedDirections' :
-                     item.title === 'Learning' ? 'LovedLearning' :
-                     item.title === 'Success' ? 'LovedSuccess' :""
+                    item.title === "Age" ? '❤️ Age' :
+                     item.title === 'Animals' ? '❤️ Animals' :
+                     item.title === 'Business' ? '❤️ Business' :
+                     item.title === 'Clothes' ? '❤️ Clothes' :
+                     item.title === 'Colors' ? '❤️ Colors' :
+                     item.title === 'Death' ? '❤️ Death' :
+                     item.title === 'Emotions' ? '❤️ Emotions' :
+                     item.title === 'Family' ? '❤️ Family' :
+                     item.title === 'Food' ? '❤️ Food' :
+                     item.title === 'Health' ? '❤️ Health' :
+                     item.title === 'Love' ? '❤️ Love' :
+                     item.title === 'Money' ? '❤️ Money' :
+                     item.title === 'Nature' ? '❤️ Nature' :
+                     item.title === 'Numbers' ? '❤️ Numbers' :
+                     item.title === 'People' ? '❤️ People' :
+                     item.title === 'Relationships' ? '❤️ Relationships' :
+                     item.title === 'School' ? '❤️ School' :
+                     item.title === 'Sports' ? '❤️ Sports' :
+                     item.title === 'Technology' ? '❤️ Technology' :
+                     item.title === 'Time' ? '❤️ Time' :
+                     item.title === 'Travel' ? '❤️ Travel' :
+                     item.title === 'Weather' ? '❤️ Weather' :
+                     item.title === 'Work' ? '❤️ Work' :
+                     item.title === 'Body Parts' ? '❤️ Body Parts' :
+                     item.title === 'Daily Life' ? '❤️ Daily Life' :
+                     item.title === 'Feelings' ? '❤️ Feelings' :
+                     item.title === 'Friendship' ? '❤️ Friendship' :
+                     item.title === 'Directions' ? '❤️ Directions' :
+                     item.title === 'Learning' ? '❤️ Learning' :
+                     item.title === 'Success' ? '❤️ Success' :""
                       // item.title==='650 IELTS Words'?'Loved-ielts-words':""
                     
                     

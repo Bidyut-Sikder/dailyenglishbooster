@@ -69,64 +69,64 @@ const IdiomsController = ({ topic }: any) => {
       return <ShowIdioms dataList={successIdioms} storageKey="LovedSuccess" />;
 
 
-      case "LovedAge":
+      case "❤️ Age":
         return <ShowFavoriteIdioms  dataList={ageIdioms} storageKey="LovedAge" />;
-      case "LovedAnimals":
+      case "❤️ Animals":
         return <ShowFavoriteIdioms dataList={animalsIdioms} storageKey="LovedAnimals" />;
-      case "LovedBusiness":
+      case "❤️ Business":
         return <ShowFavoriteIdioms dataList={businessIdioms} storageKey="LovedBusiness" />;
-      case "LovedClothes":
+      case "❤️ Clothes":
         return <ShowFavoriteIdioms dataList={clothesIdioms} storageKey="LovedClothes" />;
-      case "LovedColors":
+      case "❤️ Colors":
         return <ShowFavoriteIdioms dataList={colorsIdioms} storageKey="LovedColors" />;
-      case "LovedDeath":
+      case "❤️ Death":
         return <ShowFavoriteIdioms dataList={deathIdioms} storageKey="LovedDeath" />;
-      case "LovedEmotions":
+      case "❤️ Emotions":
         return <ShowFavoriteIdioms dataList={emotionsIdioms} storageKey="LovedEmotions" />;
-      case "LovedFamily":
+      case "❤️ Family":
         return <ShowFavoriteIdioms dataList={familyIdioms} storageKey="LovedFamily" />;
-      case "LovedFood":
+      case "❤️ Food":
         return <ShowFavoriteIdioms dataList={foodIdioms} storageKey="LovedFood" />;
-      case "LovedHealth":
+      case "❤️ Health":
         return <ShowFavoriteIdioms dataList={healthIdioms} storageKey="LovedHealth" />;
-      case "LovedMoney":
+      case "❤️ Money":
         return <ShowFavoriteIdioms dataList={moneyIdioms} storageKey="LovedMoney" />;
-      case "LovedNature":
+      case "❤️ Nature":
         return <ShowFavoriteIdioms dataList={natureIdioms} storageKey="LovedNature" />;
-      case "LovedNumbers":
+      case "❤️ Numbers":
         return <ShowFavoriteIdioms dataList={numbersIdioms} storageKey="LovedNumbers" />;
-      case "LovedPeople":
+      case "❤️ People":
         return <ShowFavoriteIdioms dataList={peopleIdioms} storageKey="LovedPeople" />;
-      case "LovedRelationships":
+      case "❤️ Relationships":
         return <ShowFavoriteIdioms dataList={relationshipsIdioms} storageKey="LovedRelationships" />;
-      case "LovedSchool":
+      case "❤️ School":
         return <ShowFavoriteIdioms dataList={schoolIdioms} storageKey="LovedSchool" />;
-      case "LovedSports":
+      case "❤️ Sports":
         return <ShowFavoriteIdioms dataList={sportsIdioms} storageKey="LovedSports" />;
-      case "LovedTechnology":
+      case "❤️ Technology":
         return <ShowFavoriteIdioms dataList={technologyIdioms} storageKey="LovedTechnology" />;
-      case "LovedTime":
+      case "❤️ Time":
         return <ShowFavoriteIdioms dataList={timeIdioms} storageKey="LovedTime" />;
-      case "LovedTravel":
+      case "❤️ Travel":
         return <ShowFavoriteIdioms dataList={travelIdioms} storageKey="LovedTravel" />;
-      case "LovedWeather":
+      case "❤️ Weather":
         return <ShowFavoriteIdioms dataList={weatherIdioms} storageKey="LovedWeather" />;
-      case "LovedWork":
+      case "❤️ Work":
         return <ShowFavoriteIdioms dataList={workIdioms} storageKey="LovedWork" />;
-      case "LovedBody Parts":
+      case "❤️ Body Parts":
         return <ShowFavoriteIdioms dataList={bodyPartsIdioms} storageKey="LovedBody Parts" />;
-      case "LovedDaily Life":
+      case "❤️ Daily Life":
         return <ShowFavoriteIdioms dataList={dailyLifeIdioms} storageKey="LovedDaily Life" />;
-      case "LovedDirections":
+      case "❤️ Directions":
         return <ShowFavoriteIdioms dataList={directionsIdioms} storageKey="LovedDirections" />;
-      case "LovedFeelings":
+      case "❤️ Feelings":
         return <ShowFavoriteIdioms dataList={feelingsIdioms} storageKey="LovedFeelings" />;
-      case "LovedFriendship":
+      case "❤️ Friendship":
         return <ShowFavoriteIdioms dataList={friendshipIdioms} storageKey="LovedFriendship" />;
   
-      case "LovedLearning":
+      case "❤️ Learning":
         return <ShowFavoriteIdioms dataList={learningIdioms} storageKey="LovedLearning" />;
-      case "LovedSuccess":
+      case "❤️ Success":
         return <ShowFavoriteIdioms dataList={successIdioms} storageKey="LovedSuccess" />;
   
 
