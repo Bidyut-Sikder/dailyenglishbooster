@@ -32,6 +32,8 @@ import GrammarCategories from "@/components/grammar/GrammarCategories";
 import { grammarCategories } from "@/assets/data/grammar/grammarCategories";
 import { synonymsAntonyms } from "@/assets/data/synonymsAntonyms/categories";
 import SynonymAndAntonyms from "@/components/Synonyms&Antonyms/Synonyms&AntonymsCategories";
+import ProverbCategories from "@/components/proverbs/ProverbCategories";
+import { proverbCategories } from "@/assets/data/proverbs/proverbCategories";
 
 export default function App() {
   const { category } = useLocalSearchParams() as {
@@ -162,6 +164,12 @@ export default function App() {
     return <SynonymAndAntonyms synonymAndAntonyms={synonymsAntonyms} />
 
   }
+
+
+  if(category==='Proverbs'){
+    return <ProverbCategories proverbs={proverbCategories} />
+  }
+
 
   return (
     <>

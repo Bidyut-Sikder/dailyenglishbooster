@@ -15,7 +15,7 @@ import { useTheme } from '@/hooks/theme';
 import { FlashList } from '@shopify/flash-list';
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 
-export default function ShowPhrases({dataList,storageKey}:any) {
+export default function ShowProverbs({dataList,storageKey}:any) {
   const params=useLocalSearchParams()
  const navigation=useNavigation()
   const [lovedIds, setLovedIds] = useState<number[]>([]);
@@ -28,25 +28,26 @@ export default function ShowPhrases({dataList,storageKey}:any) {
   // }, [params]);
 
 
-  useEffect(() => {
-    const loadLovedWords = async () => {
-      const json = await AsyncStorage.getItem(storageKey);
-      if (json) setLovedIds(JSON.parse(json));
-    };
-    loadLovedWords();
-  }, []);
+//   useEffect(() => {
+//     const loadLovedWords = async () => {
+//       const json = await AsyncStorage.getItem(storageKey);
+//       if (json) setLovedIds(JSON.parse(json));
+//     };
+//     loadLovedWords();
+//   }, []);
 
   const handleSpeak = (text: string) => {
     Speech.speak(text, { language: 'en', rate: 0.8 });
   };
 
   const toggleLove = async (id: number) => {
-    const updated = lovedIds.includes(id)
-      ? lovedIds.filter(i => i !== id)
-      : [...lovedIds, id];
-    setLovedIds(updated); // ✅ Fixed here
-    await AsyncStorage.setItem(storageKey, JSON.stringify(updated));
-  };
+    // const updated = lovedIds.includes(id)
+    //   ? lovedIds.filter(i => i !== id)
+    //   : [...lovedIds, id];
+    // setLovedIds(updated); // ✅ Fixed here
+    // await AsyncStorage.setItem(storageKey, JSON.stringify(updated));
+  
+};
 
   const styles = StyleSheet.create({
     list: {
@@ -127,20 +128,14 @@ export default function ShowPhrases({dataList,storageKey}:any) {
       <View style={styles.header}>
         <Text style={styles.id}>{item.id}.</Text>
         <View style={styles.wordRow}>
-          <Text style={styles.word}>{item.idiom}</Text>
+          <Text style={styles.word}>{item.proverb}</Text>
           {/* <View style={styles.badge}>
             <Text style={styles.badgeText}>{item.partsOfSpeech}</Text>
           </View> */}
         </View>
         <View style={styles.iconRow}>
-          <TouchableOpacity onPress={() => toggleLove(item.id)}>
-            <Ionicons
-              name={lovedIds.includes(item.id) ? 'heart' : 'heart-outline'}
-              size={26}
-              color={lovedIds.includes(item.id) ? 'red' : isDark ? '#aaa' : 'gray'}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => handleSpeak(item.idiom)} style={{ marginLeft: 10 }}>
+   
+          <TouchableOpacity onPress={() => handleSpeak(item.proverb)} style={{ marginLeft: 10 }}>
             <Ionicons name="volume-high-outline" size={28} color={isDark ? '#fff' : 'black'} />
           </TouchableOpacity>
         </View>

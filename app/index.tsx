@@ -145,7 +145,7 @@ const data = [
   {
     id: "8",
     title: "Synonyms & Antonyms",
-    description: "List of commonly used synonyms.",
+    description: "List of commonly used synonyms and antonyms.",
     icon: "swap-horizontal-outline",
   },
 

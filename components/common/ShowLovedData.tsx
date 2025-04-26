@@ -14,7 +14,9 @@ import { useLocalSearchParams, useNavigation } from "expo-router";
 import { useTheme } from "@/hooks/theme";
 
 
-export default function ShowFavoriteIdioms({dataList,header, storageKey}:any) {
+export default function ShowLovedData({dataList, storageKey}:any) {
+
+
 
   const [lovedIds, setLovedIds] = useState<number[]>([]);
   const navigation = useNavigation();
@@ -43,9 +45,6 @@ export default function ShowFavoriteIdioms({dataList,header, storageKey}:any) {
     loadLovedWords();
   }, []);
 
-  // useEffect(() => {
-  //   navigation.setOptions({ title: decodeURIComponent(`❤️ ${params.category} ${header}`) });
-  // }, [params]);
 
   const handleSpeak = (text: string) => {
     Speech.speak(text, { language: "en", rate: 0.8 });
@@ -58,6 +57,7 @@ export default function ShowFavoriteIdioms({dataList,header, storageKey}:any) {
   };
 
 
+
   const likedWords = dataList.filter((word:any) => lovedIds.includes(word.id));
 
   const renderItem = ({ item }: { item: (typeof dataList)[0] }) => (
@@ -65,7 +65,7 @@ export default function ShowFavoriteIdioms({dataList,header, storageKey}:any) {
       <View style={styles.header}>
         <Text style={styles.id}>{item.id}.</Text>
         <View style={styles.wordRow}>
-          <Text style={styles.word}>{item.idiom}</Text>
+          <Text style={styles.word}>{item.idiom || item.phrase}</Text>
           {/* <View style={styles.badge}>
             <Text style={styles.badgeText}>{item.partsOfSpeech}</Text>
           </View> */}
@@ -178,11 +178,9 @@ export default function ShowFavoriteIdioms({dataList,header, storageKey}:any) {
               color: isDark ? "#aaa" : "#333",
             }}
           >
-            {
-              loading
-                ? "Loading..."
-                : "No liked words found. Go to the dictionary and like some words!"
-            }
+
+            No liked words found. Go to the dictionary and like some words!
+            
           </Text>
         }
       /> 

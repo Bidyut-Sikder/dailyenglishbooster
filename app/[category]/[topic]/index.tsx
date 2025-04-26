@@ -11,6 +11,7 @@ import IdiomsController from "@/components/idioms/IdiomsController";
 import PhrasesController from "@/components/phrases/PhrasesController";
 import GrammarController from "@/components/grammar/GrammarController";
 import SynonymAntonymController from "@/components/Synonyms&Antonyms/SynonymAntonymController";
+import ProverbController from "@/components/proverbs/ProverbController";
 
 export default function App() {
   const navigation = useNavigation();
@@ -64,6 +65,10 @@ export default function App() {
   if (category === "Synonyms & Antonyms" && topic) {
     return <SynonymAntonymController topic={topic} />;
   }
+  if (category === "Proverbs" && topic) {
+    return <ProverbController topic={topic} />;
+  }
+
 
   return <Text> NO DATA </Text>;
 }
