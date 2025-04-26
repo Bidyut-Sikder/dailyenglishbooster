@@ -1,53 +1,32 @@
 
-
-import React, { useEffect, useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  Platform,
-} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet, Platform } from 'react-native';
+import { FlashList } from '@shopify/flash-list';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Speech from 'expo-speech';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '@/hooks/theme';
-import { FlashList } from '@shopify/flash-list';
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 
-export default function ShowProverbs({dataList,storageKey}:any) {
-  const params=useLocalSearchParams()
- const navigation=useNavigation()
+export default function ShowProverbs({ dataList, storageKey }: any) {
+  const params = useLocalSearchParams();
+  const navigation = useNavigation();
   const [lovedIds, setLovedIds] = useState<number[]>([]);
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
-
-  // useEffect(() => {
-  //   navigation.setOptions({ title: decodeURIComponent(`${params.category} ${params.topic}`) });
-  // }, [params]);
-
-
-//   useEffect(() => {
-//     const loadLovedWords = async () => {
-//       const json = await AsyncStorage.getItem(storageKey);
-//       if (json) setLovedIds(JSON.parse(json));
-//     };
-//     loadLovedWords();
-//   }, []);
-
+  // Handle speaking functionality and restart speech if clicked again
   const handleSpeak = (text: string) => {
-    Speech.speak(text, { language: 'en', rate: 0.8 });
+    Speech.stop(); // Stop any current speech
+    Speech.speak(text, { language: 'en', rate: 0.8 }); // Start new speech
   };
 
-  const toggleLove = async (id: number) => {
-    // const updated = lovedIds.includes(id)
-    //   ? lovedIds.filter(i => i !== id)
-    //   : [...lovedIds, id];
-    // setLovedIds(updated); // ✅ Fixed here
-    // await AsyncStorage.setItem(storageKey, JSON.stringify(updated));
-  
-};
+  // Clean up speech when user navigates away
+  useEffect(() => {
+    return () => {
+      Speech.stop(); // Stop speech when component unmounts or user navigates away
+    };
+  }, []);
 
   const styles = StyleSheet.create({
     list: {
@@ -72,44 +51,38 @@ export default function ShowProverbs({dataList,storageKey}:any) {
     },
     header: {
       flexDirection: 'row',
-      alignItems: 'center',
+      alignItems: 'flex-start',
       marginBottom: 10,
     },
     id: {
       fontWeight: 'bold',
-      fontSize: 16,
-      marginRight: 8,
+      fontSize: 18,
       color: isDark ? '#fff' : '#333',
+      marginRight: 8,
+      marginTop: 3,
     },
-    wordRow: {
+    wordContainer: {
       flexDirection: 'row',
-      alignItems: 'center',
+      alignItems: 'flex-start',
       flex: 1,
+      flexWrap: 'wrap',
     },
     word: {
       fontSize: 20,
       fontWeight: '600',
       color: isDark ? '#fff' : '#333',
-      marginRight: 8,
+      flexShrink: 1,
     },
-    badge: {
-      backgroundColor: isDark ? '#444' : '#e0e0e0',
-      paddingHorizontal: 6,
-      paddingVertical: 2,
-      borderRadius: 6,
-    },
-    badgeText: {
-      fontSize: 12,
-      color: isDark ? '#ccc' : '#555',
-    },
-    iconRow: {
+    labelRow: {
       flexDirection: 'row',
       alignItems: 'center',
+      justifyContent: 'space-between',
+      marginTop: 8,
+      marginBottom: 4,
     },
     label: {
       fontSize: 14,
       fontWeight: 'bold',
-      marginTop: 6,
       color: isDark ? '#ccc' : '#666',
     },
     text: {
@@ -125,25 +98,39 @@ export default function ShowProverbs({dataList,storageKey}:any) {
 
   const renderItem = ({ item }: { item: typeof dataList[0] }) => (
     <View style={styles.card}>
+      {/* ID + Proverb + Speaker */}
       <View style={styles.header}>
         <Text style={styles.id}>{item.id}.</Text>
-        <View style={styles.wordRow}>
-          <Text style={styles.word}>{item.proverb}</Text>
-          {/* <View style={styles.badge}>
-            <Text style={styles.badgeText}>{item.partsOfSpeech}</Text>
-          </View> */}
+        <View style={styles.wordContainer}>
+          <Text style={styles.word} numberOfLines={2} ellipsizeMode="tail">
+            {item.proverb}
+          </Text>
         </View>
-        <View style={styles.iconRow}>
-   
-          <TouchableOpacity onPress={() => handleSpeak(item.proverb)} style={{ marginLeft: 10 }}>
-            <Ionicons name="volume-high-outline" size={28} color={isDark ? '#fff' : 'black'} />
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity onPress={() => handleSpeak(item.proverb)} style={{ marginLeft: 8 }}>
+          <Ionicons name="volume-high-outline" size={26} color={isDark ? '#fff' : '#333'} />
+        </TouchableOpacity>
       </View>
 
-      <Text style={styles.label}>📖 Meaning</Text>
+      {/* Meaning */}
+      <View style={styles.labelRow}>
+        <Text style={styles.label}>📖 Meaning</Text>
+        <TouchableOpacity onPress={() => handleSpeak(item.meaning)}>
+          <Ionicons name="volume-high-outline" size={22} color={isDark ? '#ccc' : '#666'} />
+        </TouchableOpacity>
+      </View>
       <Text style={styles.text}>{item.meaning}</Text>
-      <Text style={styles.label}>💬 Example</Text>
+
+      {/* Example */}
+      <View style={styles.labelRow}>
+        <Text style={styles.label}>💬 Example</Text>
+        <TouchableOpacity
+          onPress={() =>
+            handleSpeak(`Example one: ${item.example1}. Example two: ${item.example2}`)
+          }
+        >
+          <Ionicons name="volume-high-outline" size={22} color={isDark ? '#ccc' : '#666'} />
+        </TouchableOpacity>
+      </View>
       <Text style={styles.textItalic}>1. {item.example1}</Text>
       <Text style={styles.textItalic}>2. {item.example2}</Text>
     </View>
@@ -153,13 +140,29 @@ export default function ShowProverbs({dataList,storageKey}:any) {
     <View style={{ flex: 1, backgroundColor: isDark ? '#191919' : '#f2f2f2' }}>
       <FlashList
         data={dataList}
-        keyExtractor={item => item.id.toString()}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={renderItem}
-        estimatedItemSize={140}
+        estimatedItemSize={160}
         contentContainerStyle={styles.list}
         showsVerticalScrollIndicator={true}
-        extraData={lovedIds} 
+        extraData={lovedIds}
       />
     </View>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

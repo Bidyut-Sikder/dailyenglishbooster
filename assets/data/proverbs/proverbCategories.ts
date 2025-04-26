@@ -63,8 +63,8 @@ export const proverbCategories = [
 //   {
 //     id: 1,
 //     proverb: "Starts with a",
-//     meaning: "Meaning",
-//     example1: "Example1",
-//     example2: "Example2",
+//     meaning: "Meaning.",
+//     example1: "Example1.",
+//     example2: "Example2.",
 //   },
 // ];
