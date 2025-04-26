@@ -10,6 +10,7 @@ import MoreSentenceController from "@/components/sentences/MoreSentenceControlle
 import IdiomsController from "@/components/idioms/IdiomsController";
 import PhrasesController from "@/components/phrases/PhrasesController";
 import GrammarController from "@/components/grammar/GrammarController";
+import SynonymAntonymController from "@/components/Synonyms&Antonyms/SynonymAntonymController";
 
 export default function App() {
   const navigation = useNavigation();
@@ -55,10 +56,15 @@ export default function App() {
     return <PhrasesController topic={topic} />;
   }
 
-
   if (category === "Grammar" && topic) {
     return <GrammarController topic={topic} />;
   }
 
+
+  if (category === "Synonyms & Antonyms" && topic) {
+    return <SynonymAntonymController topic={topic} />;
+  }
+
   return <Text> NO DATA </Text>;
 }
+

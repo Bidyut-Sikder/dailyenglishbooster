@@ -144,94 +144,51 @@ const data = [
   },
   {
     id: "8",
-    title: "Pronunciation",
-    description: "Improve your English pronunciation.",
-    icon: "mic-outline",
-  },
-  {
-    id: "9",
-    title: "Tenses Practice",
-    description: "Learn all 12 tenses with examples.",
-    icon: "time-outline",
-  },
-  {
-    id: "10",
-    title: "Interview Q&A",
-    description: "Frequently asked interview questions with answers.",
-    icon: "help-circle-outline",
-  },
-  {
-    id: "11",
-    title: "Email Writing",
-    description: "Formal and informal email writing examples.",
-    icon: "mail-outline",
-  },
-  {
-    id: "12",
-    title: "Story Telling",
-    description: "Short stories to improve English comprehension.",
-    icon: "bookmarks-outline",
-  },
-  {
-    id: "13",
-    title: "Word Games",
-    description: "Fun games to build vocabulary.",
-    icon: "game-controller-outline",
-  },
-  {
-    id: "14",
-    title: "Synonyms",
+    title: "Synonyms & Antonyms",
     description: "List of commonly used synonyms.",
     icon: "swap-horizontal-outline",
   },
+
   {
-    id: "15",
-    title: "Antonyms",
-    description: "Opposite words with examples.",
-    icon: "swap-vertical-outline",
-  },
-  {
-    id: "16",
+    id: "9",
     title: "Proverbs",
     description: "Popular English proverbs with meanings.",
     icon: "leaf-outline",
   },
   {
-    id: "17",
-    title: "Reading Practice",
-    description: "Practice passages to improve reading skills.",
-    icon: "document-text-outline",
+    id: "10",
+    title: "Email Writing",
+    description: "Formal and informal email writing examples.",
+    icon: "mail-outline",
   },
+
   {
-    id: "18",
+    id: "11",
+    title: "Word Games",
+    description: "Fun games to build vocabulary.",
+    icon: "game-controller-outline",
+  },
+
+  {
+    id: "12",
     title: "Writing Skills",
     description: "Improve your English writing skills.",
     icon: "pencil-outline",
   },
   {
-    id: "19",
+    id: "13",
     title: "Listening Skills",
     description: "Practice listening with audio clips.",
     icon: "ear-outline",
   },
+
   {
-    id: "20",
-    title: "Spoken English",
-    description: "Learn to speak English fluently.",
-    icon: "chatbubbles-outline",
-  },
-  {
-    id: "21",
-    title: "Translation Practice",
-    description: "Translate between English and your native language.",
-    icon: "language-outline",
-  },
-  {
-    id: "22",
+    id: "14",
     title: "Daily Quizzes",
     description: "Test your English daily with quizzes.",
     icon: "help-outline",
   },
-
-  
 ];
+
+
+

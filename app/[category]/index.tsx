@@ -30,6 +30,8 @@ import { phrasesCategories } from "@/assets/data/phrases/categories";
 import PhrasesCategories from "@/components/phrases/PhrasesCategories";
 import GrammarCategories from "@/components/grammar/GrammarCategories";
 import { grammarCategories } from "@/assets/data/grammar/grammarCategories";
+import { synonymsAntonyms } from "@/assets/data/synonymsAntonyms/categories";
+import SynonymAndAntonyms from "@/components/Synonyms&Antonyms/Synonyms&AntonymsCategories";
 
 export default function App() {
   const { category } = useLocalSearchParams() as {
@@ -153,6 +155,11 @@ export default function App() {
   }
   if(category==='Grammar'){
     return <GrammarCategories grammarCategories={grammarCategories} />
+
+  }
+
+  if(category==='Synonyms & Antonyms'){
+    return <SynonymAndAntonyms synonymAndAntonyms={synonymsAntonyms} />
 
   }
 
