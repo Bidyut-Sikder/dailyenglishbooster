@@ -81,16 +81,16 @@ export default function ShowProverbs({ dataList, storageKey }: any) {
       marginBottom: 4,
     },
     label: {
-      fontSize: 14,
+      fontSize: 17,
       fontWeight: 'bold',
       color: isDark ? '#ccc' : '#666',
     },
     text: {
-      fontSize: 15,
+      fontSize: 16,
       color: isDark ? '#eee' : '#333',
     },
     textItalic: {
-      fontSize: 14,
+      fontSize: 16,
       fontStyle: 'italic',
       color: isDark ? '#bbb' : '#555',
     },
