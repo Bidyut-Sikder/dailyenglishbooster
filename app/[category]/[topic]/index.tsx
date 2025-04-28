@@ -12,6 +12,7 @@ import PhrasesController from "@/components/phrases/PhrasesController";
 import GrammarController from "@/components/grammar/GrammarController";
 import SynonymAntonymController from "@/components/Synonyms&Antonyms/SynonymAntonymController";
 import ProverbController from "@/components/proverbs/ProverbController";
+import GrammarTestController from "@/components/grammarTest/GrammarTestController";
 
 export default function App() {
   const navigation = useNavigation();
@@ -60,7 +61,9 @@ export default function App() {
   if (category === "Grammar" && topic) {
     return <GrammarController topic={topic} />;
   }
-
+  if (category === "Grammar Test" && topic) {
+    return <GrammarTestController topic={topic} />;
+  }
 
   if (category === "Synonyms & Antonyms" && topic) {
     return <SynonymAntonymController topic={topic} />;

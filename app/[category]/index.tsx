@@ -34,6 +34,7 @@ import { synonymsAntonyms } from "@/assets/data/synonymsAntonyms/categories";
 import SynonymAndAntonyms from "@/components/Synonyms&Antonyms/Synonyms&AntonymsCategories";
 import ProverbCategories from "@/components/proverbs/ProverbCategories";
 import { proverbCategories } from "@/assets/data/proverbs/proverbCategories";
+import NounsTestScreen from "@/components/grammarTest/GrammarTest";
 
 export default function App() {
   const { category } = useLocalSearchParams() as {
@@ -159,7 +160,10 @@ export default function App() {
     return <GrammarCategories grammarCategories={grammarCategories} />
 
   }
+  if(category==='Grammar Test'){
+    return <GrammarCategories grammarCategories={grammarCategories} />
 
+  }
   if(category==='Synonyms & Antonyms'){
     return <SynonymAndAntonyms synonymAndAntonyms={synonymsAntonyms} />
 

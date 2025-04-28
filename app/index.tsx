@@ -144,46 +144,37 @@ const data = [
   },
   {
     id: "8",
+    title: "Grammar Test",
+    description: "Test your English daily with quizzes.",
+    icon: "help-outline",
+  },
+  {
+    id: "9",
     title: "Synonyms & Antonyms",
     description: "List of commonly used synonyms and antonyms.",
     icon: "swap-horizontal-outline",
   },
 
   {
-    id: "9",
+    id: "10",
     title: "Proverbs",
     description: "Popular English proverbs with meanings.",
     icon: "leaf-outline",
   },
   {
-    id: "10",
-    title: "Email Writing",
-    description: "Formal and informal email writing examples.",
-    icon: "mail-outline",
-  },
-
-  {
     id: "11",
+    title: "Speaking Practice",
+    description: "Test your English daily with quizzes.",
+    icon: "help-outline",
+  },
+  {
+    id: "12",
     title: "Word Games",
     description: "Fun games to build vocabulary.",
     icon: "game-controller-outline",
   },
-
-  {
-    id: "12",
-    title: "Writing Skills",
-    description: "Improve your English writing skills.",
-    icon: "pencil-outline",
-  },
   {
     id: "13",
-    title: "Listening Skills",
-    description: "Practice listening with audio clips.",
-    icon: "ear-outline",
-  },
-
-  {
-    id: "14",
     title: "Daily Quizzes",
     description: "Test your English daily with quizzes.",
     icon: "help-outline",
